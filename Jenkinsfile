@@ -1,10 +1,10 @@
 pipeline {
-    agent any
+    agent none  // Required when using agent within stages
 
     stages {
         stage('Build') {
-            agent{
-                docker{
+            agent {
+                docker {
                     image 'node:18-alpine'
                     reuseNode true
                 }
@@ -17,7 +17,6 @@ pipeline {
                     npm ci
                     npm run build
                     ls -la
-                    
                 '''
             }
         }
