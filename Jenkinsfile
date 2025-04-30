@@ -1,5 +1,5 @@
 pipeline {
-    agent none  // Required when using agent within stages
+    agent none
 
     stages {
         stage('Build') {
